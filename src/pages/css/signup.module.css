@@ -16,15 +16,14 @@
     .container {
         display: flex;
         flex-direction: column;
-        height: 100vh;
         justify-content: space-around;
         align-items: center;
     }
 
-    .form {
+    /* .form {
         border: 1px solid #D3D3D3;
         padding: 1.5rem;
-    }
+    } */
 }
 
 .feedback {
