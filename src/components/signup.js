@@ -5,6 +5,9 @@ import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
 import { Link } from 'gatsby'
 import { Formik } from 'formik'
 import * as yup from 'yup';
+import Axios from 'axios'
+import { navigate } from "@reach/router"
+
 
 function signup() {
     return (
@@ -14,11 +17,21 @@ function signup() {
                     height = '250px'
                 />
             </div>
-        
+
             <Formik
-                initialValues = {{name: '', email: '', confirmEmail: '', password: ''}}
-                onSubmit = {(values, {setSubmitting}) => {
-                    console.log('submitted')
+                initialValues = {{email: '', password: ''}}
+                onSubmit = {async (values, {setSubmitting}) => {
+                    const url = 'http://localhost:3000/users/signup';
+                    try {
+                        const signup = await Axios.post(url, {
+                            email: values.email,
+                            password: values.password,
+                        }) ;
+                        navigate(`/app/login`)
+                    }
+                    catch(err) {
+                        console.log(err)
+                    }
                 }}
 
                 validationSchema = {

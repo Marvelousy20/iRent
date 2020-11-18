@@ -36,3 +36,16 @@ body {
 .link:hover {
     color: blue;
 }
+
+.social {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+}

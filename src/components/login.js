@@ -2,11 +2,27 @@ import React from 'react'
 import { UndrawHouseSearching } from 'react-undraw-illustrations'
 import styles from './css/login.module.css'
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { Formik } from 'formik'
 import * as yup from 'yup';
+import Axios from 'axios'
+import { setToken }from '../services/auth'
 
-function login() {
+function Login(props) {
+
+    const [state, setState] = React.useState({
+        token: '',
+        signInError: ''
+    })
+
+    React.useEffect(() => {
+        const token = state.token
+        if(token) {
+            setToken(token) 
+        } 
+    })
+    
+    console.log(state.token)
     return (
         <div className = {styles.container}>
             <div className = {styles.ilu}>
@@ -14,12 +30,34 @@ function login() {
                     height = '250px'
                 />
             </div>
-        
+
             <Formik
                 initialValues = {{email: '', password: ''}}
-                onSubmit = {(values, {setSubmitting}) => {
-                    console.log('submitted')
+                onSubmit = {async (values, {setSubmitting}) => {
+                    const url = 'http://localhost:3000/users/login'
+
+                    try {
+                        const user = await Axios.post(url, {
+                            email: values.email,
+                            password: values.password,
+                        })
+                        console.log(user)
+                        console.log(user.data.token)
+                        setState(() => ({
+                            ...state, token: user.data.token
+                        }))
+                        setSubmitting(false)
+                        navigate('/') 
+                    }
+
+                    catch(err) {
+                        console.log(err)
+                        setState(() => ({
+                            ...state, signInError: 'Wrong email and password'
+                        }))
+                    }
                 }}
+
                 validationSchema = {
                     yup.object().shape({                    
                         email: yup.string()
@@ -50,7 +88,6 @@ function login() {
                                     icon="envelope" 
                                     group 
                                     type="email"
-                                    error="wrong"
                                     success="right"
                                     name = 'email'
                                     validate
@@ -71,16 +108,16 @@ function login() {
                                     validate  
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    className = {errors.email && styles.feedback}
                                 />
                                 {errors.password && touched.password && (
-                                    <div  className = {errors.email && styles.feedback}>{errors.password}</div>
+                                    <div className = {errors.password && styles.feedback}>{errors.password}</div>
                                 )}
+                                <br />
+                                {state.signInError && (touched.password || touched.email) && (<div className = {styles.feedback}>{state.signInError}</div>)}
                             </div>
                             <div className="text-center">
                                 <MDBBtn color="blue" type = 'submit' disabled = {isSubmitting}>Login</MDBBtn>
                             </div>
-
                             <MDBModalFooter className="mx-5 pt-2 mt-2">
                                 <p className="font-small grey-text d-flex justify-content-end">
                                     Not a member?
@@ -96,4 +133,4 @@ function login() {
     )
 }
 
-export default login
+export default Login
