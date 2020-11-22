@@ -10,7 +10,7 @@ function houseImages() {
         <div className = 'container-fluid'>
             <div className="row">
                 <div className="col-sm">
-                    <img src={BedroomA} alt="bedB"/> <br />
+                    <img src={BedroomA} alt="bedB"/>
                     <img src={BedroomImage} alt="bedA"/>
                     <span className = {styles.img}>
                         <img src={BedroomB} alt="bedC"/>
@@ -18,7 +18,7 @@ function houseImages() {
                     </span> 
                 </div>
                 <div className="col-sm">
-                    <img src={BedroomA} alt="bedB"/> <br />
+                    <img src={BedroomA} alt="bedB"/>
                     <img src={BedroomImage} alt="bedA"/>
                     <span className = {styles.img}>
                         <img src={BedroomB} alt="bedC"/>
@@ -26,7 +26,7 @@ function houseImages() {
                     </span> 
                 </div>
                 <div className="col-sm">
-                    <img src={BedroomA} alt="bedB"/> <br />
+                    <img src={BedroomA} alt="bedB"/>
                     <img src={BedroomImage} alt="bedA"/>
                     <span className = {styles.img}>
                         <img src={BedroomB} alt="bedC"/>

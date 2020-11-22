@@ -38,28 +38,32 @@ function sidedrawer({sideBarOpen, onBarOpen,}) {
     
     const signedBarLoggedIn = (
         <div className = {styles.container}>
-            <Link to = '/app/login' className = {styles.link}><b>Upload Houses</b></Link> <br />
+            <Link to = '#' className = {styles.link}><b>Upload Houses</b></Link> <br />
             {socialMedia}
         </div>
     )
     return (
         <div>
-        {isLoggedIn ? ( 
+        {isLoggedIn() ? ( 
             <Sidebar
                 sidebar={signedBarLoggedIn}
                 open={sideBarOpen}
                 onSetOpen={onBarOpen}
-                styles={{ sidebar: { background: "white" }}}
+                styles= {
+                    { sidebar: { background: "white",  position: 'fixed'}}
+                }
                 pullRight = 'true'
             >
-                <Hamburger onBarOpen = {onBarOpen}/>
+                <Hamburger onBarOpen = {onBarOpen} />
             </Sidebar> ) : (
                 <Sidebar
                     sidebar={sideBarItems}
                     open={sideBarOpen}
                     onSetOpen={onBarOpen}
-                    styles={{ sidebar: { background: "white" }}}
-                    pullRight = 'true'
+                    styles={
+                        { sidebar: { background: "white",height: '100vh', overflowY: 'hidden', position: 'fixed'}}
+                    }
+                    // pullRight = {true}
                 >
                     <Hamburger onBarOpen = {onBarOpen}/>
                 </Sidebar>

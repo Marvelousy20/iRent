@@ -8,7 +8,7 @@ import * as yup from 'yup';
 import Axios from 'axios'
 import { setToken }from '../services/auth'
 
-function Login(props) {
+function Login (props) {
 
     const [state, setState] = React.useState({
         token: '',
@@ -121,7 +121,7 @@ function Login(props) {
                             <MDBModalFooter className="mx-5 pt-2 mt-2">
                                 <p className="font-small grey-text d-flex justify-content-end">
                                     Not a member?
-                                    <Link to = '/signup'> <span className = 'ml-1'>Sign Up</span></Link>
+                                    <Link to = '/app/signup'> <span className = 'ml-1'>Sign Up</span></Link>
                                 </p>
                             </MDBModalFooter>
                         </form>

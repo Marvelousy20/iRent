@@ -149,7 +149,7 @@ function signup() {
                                     <MDBModalFooter className="mx-5 pt-2 mt-2">
                                         <p className="font-small grey-text d-flex justify-content-end">
                                             Already a member?
-                                            <Link to = '/login'><span className = 'ml-1'>Log In</span></Link>
+                                            <Link to = '/app/login'><span className = 'ml-1'>Log In</span></Link>
                                         </p>
                                     </MDBModalFooter>
                                 </form>
