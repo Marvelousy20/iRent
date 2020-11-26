@@ -30,25 +30,32 @@ function sidedrawer({sideBarOpen, onBarOpen,}) {
     // displays if user is not logged in
     const sideBarItems = (
         <div className = {styles.container}>
-            <Link to = '/app/login' className = {styles.link}>
-                <MDBBtn color="blue">Sign In</MDBBtn>
-            </Link> <br />
-
-            <Link to = '/app/signup' className = {styles.link}>
-                <MDBBtn> Sign Up</MDBBtn>
-            </Link>
-
-            {socialMedia}
+            <div>
+                <Link to = '/app/login' className = {styles.link}>
+                    <MDBBtn color="blue">Sign In</MDBBtn>
+                </Link> 
+                <br />
+                <Link to = '/app/signup' className = {styles.link}>
+                    <MDBBtn> Sign Up</MDBBtn>
+                </Link>
+            </div>
+            <div className = {styles.social}>
+                {socialMedia}
+            </div>
         </div>
     )
     
     // Displays if user is logged in
     const signedBarLoggedIn = (
         <div className = {styles.container}>
-            <Link to = '#'>
-                <MDBBtn color="blue">Upload Houses</MDBBtn>
-            </Link> <br />
-            {socialMedia}
+            <div>
+                <Link to = '#'>
+                    <MDBBtn color="blue">Upload Houses</MDBBtn>
+                </Link>
+            </div>
+            <div className = {styles.social}>
+                {socialMedia}
+            </div>
         </div>
     )
     return (
