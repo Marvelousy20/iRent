@@ -15,12 +15,7 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <header
-      style={{
-        // background: `rebeccapurple`,
-        // marginBottom: `1.45rem`,
-      }}
-    >
+    <header>
      <div className = "text-center">
         <img src = {iRentLogo} alt = "irentLogo" />
       </div> 

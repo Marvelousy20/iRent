@@ -1,3 +1,4 @@
+/* This styles apply to the three hamburgers that toggles the sidedrawer */
 .toggle-btn {
     display: flex;
     flex-direction: column;

@@ -8,37 +8,46 @@ import { isLoggedIn } from '../../services/auth'
 import { VscTwitter } from "react-icons/vsc";
 import { GoMail } from 'react-icons/go'
 import { AiFillPhone } from "react-icons/ai"
+import { MDBBtn } from 'mdbreact'
 
 function sidedrawer({sideBarOpen, onBarOpen,}) {
     const socialMedia = (
         <div>
             <div className = {`d-flex ${styles.social}`}>
                 <span>
-                    <VscTwitter  className = {styles.icons} />
+                    <VscTwitter className = {`text-primary ${styles.icons}`} />
                 </span>
                 <span>
-                    <GoMail className = {styles.icons} />        
+                    <GoMail className = {`text-primary ${styles.icons}`} />        
                 </span>
                 <span>
-                    <AiFillPhone className = {styles.icons} />
+                    <AiFillPhone className = {`text-primary ${styles.icons}`} />
                 </span>
             </div>
         </div>
     )
-
+    
+    // displays if user is not logged in
     const sideBarItems = (
         <div className = {styles.container}>
-            <Link to = '/app/login' className = {styles.link}><b>Sign In</b></Link> <br />
-            <hr style = {{color: 'black', width: '100%'}} />
-            <Link to = '/app/signup' className = {styles.link}><b>Sign Up</b></Link>
+            <Link to = '/app/login' className = {styles.link}>
+                <MDBBtn color="blue">Sign In</MDBBtn>
+            </Link> <br />
+
+            <Link to = '/app/signup' className = {styles.link}>
+                <MDBBtn> Sign Up</MDBBtn>
+            </Link>
 
             {socialMedia}
         </div>
     )
     
+    // Displays if user is logged in
     const signedBarLoggedIn = (
         <div className = {styles.container}>
-            <Link to = '#' className = {styles.link}><b>Upload Houses</b></Link> <br />
+            <Link to = '#'>
+                <MDBBtn color="blue">Upload Houses</MDBBtn>
+            </Link> <br />
             {socialMedia}
         </div>
     )
@@ -63,7 +72,7 @@ function sidedrawer({sideBarOpen, onBarOpen,}) {
                     styles={
                         { sidebar: { background: "white",height: '100vh', overflowY: 'hidden', position: 'fixed'}}
                     }
-                    // pullRight = {true}
+                    pullRight = "true"
                 >
                     <Hamburger onBarOpen = {onBarOpen}/>
                 </Sidebar>

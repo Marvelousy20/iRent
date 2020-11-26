@@ -7,31 +7,29 @@ import styles from './css/housesImages.module.css'
 
 function houseImages() {
     return (
-        <div className = 'container-fluid'>
+        <div className = 'container-fluid text-center'>
             <div className="row">
-                <div className="col-sm">
-                    <img src={BedroomA} alt="bedB"/>
-                    <img src={BedroomImage} alt="bedA"/>
-                    <span className = {styles.img}>
-                        <img src={BedroomB} alt="bedC"/>
-                        <img src={playButton} alt="bedD"/>
-                    </span> 
+                <div className="col-12 col-md-6 col-lg-4">
+                    <img src={BedroomA} alt="bedB" />
+                    <div className = {`${styles.img}`}>
+                        <img src={BedroomB} alt="bedC" className = {styles.i} />
+                        <img src={BedroomImage} alt="bedA" className = {styles.i}/>
+                    </div> 
                 </div>
-                <div className="col-sm">
-                    <img src={BedroomA} alt="bedB"/>
-                    <img src={BedroomImage} alt="bedA"/>
-                    <span className = {styles.img}>
-                        <img src={BedroomB} alt="bedC"/>
-                        <img src={playButton} alt="bedD"/>
-                    </span> 
+
+                <div className="col-12 col-md-6 col-lg-4">
+                    <img src={BedroomA} alt="bedB" />
+                    <div className = {styles.img}>
+                        <img src={BedroomB} alt="bedC" className = {styles.i} />
+                        <img src={BedroomImage} alt="bedA" className = {styles.i} />
+                    </div> 
                 </div>
-                <div className="col-sm">
-                    <img src={BedroomA} alt="bedB"/>
-                    <img src={BedroomImage} alt="bedA"/>
-                    <span className = {styles.img}>
-                        <img src={BedroomB} alt="bedC"/>
-                        <img src={playButton} alt="bedD"/>
-                    </span> 
+                <div className="col-12 col-md-6 col-lg-4">
+                    <img src={BedroomA} alt="bedB" />
+                    <div className = {styles.img}>
+                        <img src={BedroomB} alt="bedC" className = {styles.i} />
+                        <img src={BedroomImage} alt="bedA" className = {styles.i} />
+                    </div> 
                 </div>
             </div>
         </div>
