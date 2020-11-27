@@ -16,14 +16,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .social {
     display: flex;
     justify-content: space-around;
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    margin-bottom: 50px;
     left: 0;
     right: 0;
 }
