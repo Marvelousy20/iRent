@@ -36,7 +36,7 @@ function sidedrawer({sideBarOpen, onBarOpen,}) {
                 </Link> 
                 <br />
                 <Link to = '/app/signup' className = {styles.link}>
-                    <MDBBtn> Sign Up</MDBBtn>
+                    <MDBBtn> Sign Up </MDBBtn>
                 </Link>
             </div>
             <div className = {styles.social}>
@@ -49,8 +49,8 @@ function sidedrawer({sideBarOpen, onBarOpen,}) {
     const signedBarLoggedIn = (
         <div className = {styles.container}>
             <div>
-                <Link to = '#'>
-                    <MDBBtn color="blue">Upload Houses</MDBBtn>
+                <Link to = '/app/uploadForm'>
+                    <MDBBtn color="blue"> Upload Houses </MDBBtn>
                 </Link>
             </div>
             <div className = {styles.social}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import { UndrawHouseSearching } from 'react-undraw-illustrations'
 import styles from './css/signup.module.css'
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';

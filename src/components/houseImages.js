@@ -1,4 +1,4 @@
-import React from 'react' 
+import React from "react" 
 import BedroomImage from '../images/Bedroom_Image.svg'
 import BedroomA from '../images/Rectangle.svg'
 import BedroomB from '../images/Site_Image.svg' 

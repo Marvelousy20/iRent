@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import { UndrawHouseSearching } from 'react-undraw-illustrations'
 import styles from './css/login.module.css'
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
@@ -6,7 +6,7 @@ import { Link, navigate } from 'gatsby'
 import { Formik } from 'formik'
 import * as yup from 'yup';
 import Axios from 'axios'
-import { setToken }from '../services/auth'
+import { setToken } from '../services/auth'
 
 function Login (props) {
 
